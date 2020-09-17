@@ -1,12 +1,12 @@
+
 const initialState = {
-    message: []
+    message: ""
 }
 
-const todos = (state=initialState, action)=>{
+const messages = (state=initialState, action)=>{
     switch(action.type){
         case "SEND_MESSAGE":
             return {
-                ...state,
                 message: action.message
             }
         default:
@@ -14,4 +14,6 @@ const todos = (state=initialState, action)=>{
     }
 }
 
-export default todos
+
+
+export default messages
