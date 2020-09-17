@@ -1,9 +1,10 @@
 import React, { Component }from 'react';
+import { connect } from 'react-redux';
 import './App.css';
 import SendMessage from './components/SendMessage';
 
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
       <div>
@@ -13,3 +14,4 @@ export default class App extends Component {
   }
 }
 
+export default connect()(App);

@@ -13,7 +13,8 @@ router.use('/text',(req,res,next)=>{
 router.post('/text',  (req,res,next) =>{
   //let jsonRequest = JSON.parse(req.body);
   const message = req.body.message;
-  res.send(message);
+  console.log(message)
+  res.json({message:message});
 });
 
 router.use((req,res,next) =>{
