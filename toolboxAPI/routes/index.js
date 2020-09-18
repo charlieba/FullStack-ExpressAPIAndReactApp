@@ -5,20 +5,20 @@ var router = express.Router();
 
 router.use('/text',(req,res,next)=>{
   if(!req.body.message){
-    res.send("Message not found!");
+    res.status(400).send("Message not found!");
+  }else{
+    next();
   }
-  next();
 })
 
 router.post('/text',  (req,res,next) =>{
   //let jsonRequest = JSON.parse(req.body);
   const message = req.body.message;
-  console.log(message)
-  res.json({message:message});
+  res.status(200).json({message:message});
 });
 
 router.use((req,res,next) =>{
-  res.send("Welcome to Toolbox API");
+  res.status(404).send("Welcome to Toolbox API - ENDPOINT NOT FOUND");
 });
 
 module.exports = router;
