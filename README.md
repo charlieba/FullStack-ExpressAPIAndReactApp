@@ -20,10 +20,6 @@ All the installation process and usability of this apps was created with docker 
     cd FullStack-ExpressAPIAndReactApp
     ```
     This command will be install in your computer all the dependencies. 
-3. Build the app
-    ```
-    docker-compose build
-    ```
 3. Create the docker images
     ```
     docker-compose build
@@ -42,7 +38,34 @@ All the installation process and usability of this apps was created with docker 
     ```
     The API just allow the endpoint /text in using POST method. 
 
+### How to run the unit testing cases
+The configuration to run the test cases are inside of a docker image. 
+The way to run it is following the next steps:
+1. Clone the repository
+     ```
+    git clone https://github.com/giovanib02/FullStack-ExpressAPIAndReactApp.git
+    ```
+2. Enter inside the main folder 
+    ```
+    cd FullStack-ExpressAPIAndReactApp
+    ```
+    This command will be install in your computer all the dependencies. 
+3. Create the docker images
+    ```
+    docker-compose -f docker-compose-testing.yml build
+    ```
+4. Start the docker container
+    ```
+     docker-compose -f docker-compose-testing.yml up
+    ```
+5. After starting the container you will be able to see the result of the test cases:
+    ![API unit testing](apitesting.png)
+    
+    ![React App unit testing](reacttesting.png)
 
+6. To modify the test cases you have to modify the files
+    * For API Testing ./toolboxAPI/test/api/sendmessage.test.js
+    * For React APP ./toolboxapp/src/App.test.js
 ## API Endpoints Descriptions
 The API just has enabled one endpoint
 1. localhost:5000/text   
