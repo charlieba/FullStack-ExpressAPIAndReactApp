@@ -1,0 +1,23 @@
+version: "2"
+services:
+    client-test:
+        build:
+            context: ./toolboxapp
+            dockerfile: Dockerfile-test
+        volumes:
+            - ./toolboxapp:/toolboxapp
+            - /toolboxapp/node_modules
+        networks:
+            - webappnetwork
+    api-test:
+        build:
+            context: ./toolboxAPI
+            dockerfile: Dockerfile-test
+        volumes:
+            - ./toolboxAPI:/toolboxAPI
+            - /toolboxAPI/node_modules
+        networks:
+            - webappnetwork
+networks:
+    webappnetwork:
+        driver: bridge
